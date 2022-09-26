@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
 
 
 // I just need a slash for path coz router is mounted in index
-router.post('/', (req, res) => {
-    console.log('Handling POST request');
+router.post('/',
+    (req, res) => {
     res.redirect('/catalog');
 })
 

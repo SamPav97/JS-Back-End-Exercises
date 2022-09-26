@@ -1,14 +1,20 @@
 const express = require('express');
-const catalogController = require('./catalogController')
-const createController = require('./createController')
+const catalogController = require('./catalogController');
+const createController = require('./createController');
+const logger = require('./logger');
 
 const app = express();
 //It matters what path you declare first. If you declare just star first then it will show only that.
 
+app.use('/static', express.static('public'));
+
 // app.get means react to a get method with following route and the handler function. The function consists or request n resp. w resp we send back info w request we get info bout the request.
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
+    // app.get('/', (req, res) => {
+    //     res.sendFile(__dirname + '/index.html')
+    // })
+
+// Log through middleware on all urls.
+app.use(logger());
 
 app.use('/create', createController)
 
