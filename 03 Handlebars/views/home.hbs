@@ -1,0 +1,22 @@
+<h1>{{Handlebars Demo}}</h1>
+{{#if username}}
+<p>Welcome, {{username}}</p>
+{{/if}}
+
+<p>{{message}}</p>
+
+
+{{#with product}} 
+<div>
+    <p>Name: {{product.name}}</p>
+    <p>Price: {{product.price}}</p>
+</div>
+{{/with}}
+
+<ul>
+    {{#each contacts}}
+    {{>userCard}}
+    {{else}}
+    <p>No contacts yet</p>
+    {{/each}}
+</ul>
