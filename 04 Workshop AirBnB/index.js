@@ -19,9 +19,11 @@ app.use('/static', express.static('static'));
 
 // This is Middleware that takes the request and adds more info to it. In this case it gives a page title in cases where there is none.
 //Everything in the index happens one after the other.
-app.use(defaultTitle('SoftUni Accomodation'));
+app.use(defaultTitle('SoftUni Accomodation')); // This middleware is for all routers
 
 app.use(homeController);
+//Or we can attatch middleware to speciffic router if we put it between adress and router:
+// app.use('/catalog', defaultTitle('SoftUni Accomodation'), catalogController);
 app.use('/catalog', catalogController);
 app.use('/create', createController);
 //TODO attach other controllers.
