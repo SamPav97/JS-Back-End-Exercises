@@ -1,10 +1,1 @@
-[
-    {
-        "id": "1234", 
-        "name": "Room",
-        "description": "Nice and cozy.",
-        "city": "Bansko",
-        "beds": 2,
-        "price": 130
-    }
-]
+[{"id":"1234","name":"Room","description":"Nice and cozy.","city":"Bansko","beds":2,"price":130,"imgUrl":"/static/assets/room1.jpg"},{"id":"065684","name":"Hotel Room","description":"Spacious. Nice View.","city":"Sofia","beds":null,"price":null,"imgUrl":"/static/assets/room2.jpg"}]
