@@ -3,10 +3,12 @@ const { getAll, getById } = require('../services/acommodationService');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    const rooms = getAll();
+    const search = req.query.search || '';
+    const rooms = getAll(search);
     res.render('catalog', {
         title: 'All Accomodation',
-        rooms
+        rooms,
+        search
     });
 });
 

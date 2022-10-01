@@ -18,8 +18,8 @@ async function persist() {
     });
 };
 
-function getAll() {
-    return data;
+function getAll(search) {
+    return data.filter(r => r.name.toLowerCase().includes(search.toLowerCase()));
 };
 
 function getById(id) {
@@ -37,6 +37,11 @@ async function create(roomData) {
         price: Number(roomData.price),
         imgUrl: roomData.imgUrl
     };
+
+    const missing = Object.entries(room).filter(([k,v]) => !v);
+    if (missing.length > 0) {
+        throw new Error(missing.map(m => `${m[0]} is required!`).join('\n'));
+    }
 
     data.push(room);
     await persist();
