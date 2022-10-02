@@ -8,7 +8,7 @@ const data = JSON.parse(fs.readFileSync(filename));
 
 async function persist() {
     return new Promise((res, rej) => {
-        fs.writeFile(filename, JSON.stringify(data), (err) => {
+        fs.writeFile(filename, JSON.stringify(data, null, 2), (err) => {
             if (err == null) {
                 res();
             } else {
